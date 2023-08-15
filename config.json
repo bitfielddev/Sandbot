@@ -1,4 +1,5 @@
 {
     "bot_logs": "1140097220549541961",
-    "debug": true
+    "debug": true,
+    "version": "0.0.0-alpha1"
 }

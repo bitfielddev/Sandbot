@@ -47,6 +47,8 @@ export default class Bot {
     private getCommands() {
         let commands: Array<SlashCommandBuilder> = [];
         this.moduleManager.modules.forEach(element => {
+            if(element.commandManager.commands.length < 1) return;
+    
             commands.push(element.commandManager.buildCommand());
         });
 

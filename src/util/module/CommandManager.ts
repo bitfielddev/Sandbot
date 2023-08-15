@@ -40,7 +40,7 @@ export default class CommandManager {
         const file = await import(commandPath);
         let mod;
         try {
-            mod = new file.default();
+            mod = new file.default(this.bot, this.module);
             if(!(mod instanceof Command)) {
                 throw new TypeError();
             }
@@ -49,7 +49,7 @@ export default class CommandManager {
             return;
         }
 
-        await mod.init(this.bot, this.module);
+        await mod.init();
         this.commands.push(mod);
     }
 

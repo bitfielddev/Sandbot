@@ -5,13 +5,15 @@ import Bot from "../Bot";
 export default class Command {
     name: string = "";
     description: string = this.name;
-    module: Module | undefined = undefined;
-    bot: Bot | undefined = undefined;
+    module: Module;
+    bot: Bot;
 
-    async init(bot: Bot, module: Module) {
+    constructor(bot: Bot, module: Module) {
         this.bot = bot;
         this.module = module;
+    }
 
+    async init() {
         return await this.onReady();
     }
 

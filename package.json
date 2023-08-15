@@ -1,0 +1,29 @@
+{
+  "name": "sandbot",
+  "version": "1.0.0",
+  "description": "A generic Discord Bot.",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bingoose0/sandbot.git"
+  },
+  "keywords": [
+    "discordbot",
+    "discord",
+    "bot",
+    "discordjs"
+  ],
+  "author": "bingoose0",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bingoose0/sandbot/issues"
+  },
+  "homepage": "https://github.com/bingoose0/sandbot#readme",
+  "dependencies": {
+    "discord.js": "^14.12.1",
+    "dotenv": "^16.3.1"
+  }
+}

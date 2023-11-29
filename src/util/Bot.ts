@@ -3,6 +3,7 @@ import Logger from "./Logger";
 import ModuleManager from "./module/ModuleManager";
 import Config from "./Config";
 import * as fs from "fs";
+import typeorm from "typeorm";
 
 export default class Bot {
     client: Client;
@@ -89,10 +90,21 @@ export default class Bot {
         }
     }
 
+    private async initMongoose() {
+        this.logger.info("Attempting to initialize DB connection...")
+        let uri = process.env.MONGODB_URI;
+        if(!uri || uri.toLowerCase() == "none") {
+            return;
+        }
+
+        
+    }
+
     async run(token: string) {
         this.rest.setToken(token);
-    
         this.logger.info("Calling log-in function...")
+
+        await this.initMongoose();
         return await this.client.login(token);
     }
 }

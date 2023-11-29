@@ -5,7 +5,7 @@ import CommandManager from "./CommandManager";
 
 export default class Module {
     bot: Bot;
-    client: Client<true>;
+    client: Client;
     logger: Logger;
     commandManager: CommandManager;
 

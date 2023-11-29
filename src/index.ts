@@ -10,7 +10,7 @@ if(fs.existsSync(".env")) {
 export const config = JSON.parse(fs.readFileSync("config.json").toString());
 const bot = new Bot(GatewayIntentBits.Guilds);
 
-let token = process.env.TOKEN
+let token = process.env.DISCORD_TOKEN
 if(!token) {
     bot.logger.error(".env.TOKEN does not exist!");
     process.exit(1);
